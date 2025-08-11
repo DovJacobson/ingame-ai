@@ -9,7 +9,8 @@ We use Twine, OpenAI and GitHub: No prior experience needed.
    [Open miss-behavior.html](https://dovjacobson.github.io/ingame-ai/miss-behavior.html).
 
 2. **Download the sample game and open it Twine**  
-   - [Download miss-behavior.html](https://dovjacobson.github.io/ingame-ai/miss-behavior.html) <span title="Download">&#128190;</span> (Save it on your device - perhaps in your Downloads folder.)
+   - [Open the raw file: miss-behavior.html](https://github.com/DovJacobson/ingame-ai/blob/main/miss-behavior.html) 
+   - <span title="Download">📥</span> Save it on your device - perhaps in your Downloads folder.
    - Go to [twinery.org](https://twinery.org/).
    - Choose **Use in the Browser**
    - Use **Import From File** to bring in the game from your download folder.
