@@ -13,9 +13,9 @@ We use Twine, OpenAI and GitHub: No prior experience needed.
    - <span title="Download">📥</span> Save it on your device - perhaps in your Downloads folder.
    - Go to [twinery.org](https://twinery.org/).
    - Choose **Use in the Browser**
-   - Use **Import From File** to bring in the game from your download folder.
-   - First we will study how it works
-   - Then you and your team hack my game to create your own. That's the bulk of our workshop! 
+   - Click **Library** then **Import** to load the game from your download folder.
+   - First we will study how it works,
+   - Then you and your team hack my game to pieces and build your own. That's the bulk of our workshop! 
 
 3. **Publish your own game**  
    - In Twine, use **Publish to File** (not Save) to export your game to the device filesystem.
