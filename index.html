@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop Games</title>
+  <style>
+    body { font-family: sans-serif; margin: 2em; background: #f8f9fa; }
+    h1 { margin-bottom: 0.2em; }
+    .subtitle { color: #555; margin-bottom: 1.5em; }
+    .games-list { margin-top: 2em; }
+    .games-list li { margin: 0.5em 0; }
+    #error { color: #c00; }
+  </style>
+</head>
+<body>
+  <h1>Workshop Games</h1>
+  <div class="subtitle">Play the AI-powered games created in this workshop!</div>
+  <ul class="games-list" id="games-list"></ul>
+  <div id="error"></div>
+  <script>
+    // CONFIG
+    const repoOwner = "DovJacobson";
+    const repoName = "ingame-ai";
+    const ignoreFiles = ["index.html"]; // Add more files as needed
+
+    // GitHub Pages base URL
+    const pagesBase = `https://${repoOwner.toLowerCase()}.github.io/${repoName}/`;
+
+    // Fetch file list from GitHub API
+    fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/`)
+      .then(response => {
+        if (!response.ok) throw new Error("Couldn't fetch file list from GitHub.");
+        return response.json();
+      })
+      .then(files => {
+        const htmlFiles = files.filter(f =>
+          f.name.endsWith(".html") && !ignoreFiles.includes(f.name)
+        );
+        if (htmlFiles.length === 0) {
+          document.getElementById('games-list').innerHTML = "<li>No games found yet. Upload yours!</li>";
+          return;
+        }
+        document.getElementById('games-list').innerHTML = htmlFiles.map(f =>
+          `<li><a href="${pagesBase}${encodeURIComponent(f.name)}" target="_blank">${f.name}</a></li>`
+        ).join('');
+      })
+      .catch(err => {
+        document.getElementById('error').textContent = "Error loading games list: " + err.message;
+      });
+  </script>
+</body>
+</html>
